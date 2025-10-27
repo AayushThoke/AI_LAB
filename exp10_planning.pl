@@ -31,3 +31,6 @@ dfs(State, Goal, Visited, [Action | Plan]) :-
     move(State, Action, NewState), % 'move' would call pickup or putdown
     \+ member(NewState, Visited),  % Avoid cycles (revisiting states)
     dfs(NewState, Goal, [State | Visited], Plan).
+
+//query
+?- plan(Plan).
